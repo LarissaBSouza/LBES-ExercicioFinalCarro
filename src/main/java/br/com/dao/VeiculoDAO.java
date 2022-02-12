@@ -133,28 +133,57 @@ public class VeiculoDAO {
 	}
 
 
-	public void compararAnosIPVA(String ano) {
-		Conexao c = Conexao.getInstance();
-		Connection con = c.getConnection();
-		
-		try {
-			PreparedStatement p = con.prepareStatement("select ano from (select ano from veiculos union all select ano from IPVA) veiculos group by ano having count(*) = 1 where ano = ?");
-			p.setString(1, ano);
-			ResultSet r = p.executeQuery();
-			
-			while (r.next()) {
-				String ano1 = r.getString("ano");
-			}
-			
-			
-			p.executeQuery();
-			System.out.println("Informação carregada");
-			p.close();
-			
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-	
+//	public void compararAnosIPVA() {
+//		Conexao c = Conexao.getInstance();
+//		Connection con = c.getConnection();
+//		
+//		try {
+//			PreparedStatement p = con.prepareStatement("select ano from (select ano from veiculos union all select ano from IPVA) veiculos group by ano having count(*) = 1");
+//			
+//			String ano = null;
+//			
+//			p.setString(1, "%" + ano + "%");  
+//			p.executeQuery();
+//			
+//			System.out.println(p);
+//			System.out.println("Informação carregada");
+//			p.close();
+//			
+//		} catch (SQLException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//	}
+//	
+//	public String buscarIPVA(String ano) throws Exception{
+//		
+//		Conexao c = Conexao.getInstance();
+//		Connection con = c.getConnection();
+//		
+//		try {
+//			PreparedStatement p = con.prepareStatement("SELECT ano FROM (SELECT ano FROM veiculos UNION ALL SELECT ano FROM IPVA) veiculos GROUP BY ano HAVING COUNT(*) = 1\"");
+//			
+//			p.setString(1, "%" + ano + "%");
+//			
+//			ResultSet r = p.executeQuery();
+//			
+//			if (!r.next()) {
+//                throw new Exception("Não foi encontrado nenhuma pagamento previsto para o ano referente.");
+//            }
+//			
+//			
+//            while (r.next()) {
+//              String ipvaVeiculo = "Não Paga";
+//            }
+//			
+//		} catch (SQLException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		return ano;
+//			
+//	}
+
+
+
 }

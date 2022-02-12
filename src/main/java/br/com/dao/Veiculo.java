@@ -5,7 +5,6 @@ public class Veiculo {
 	private Integer id;
 	private String modelo;
 	private String ano;
-	private String ipvaVeiculo;
 	
 	
 	public Veiculo(Integer id, String modelo, String ano) {
@@ -21,7 +20,6 @@ public class Veiculo {
 		this.modelo = modelo;
 		this.ano = ano;
 	}
-
 
 
 	public Integer getId() {
@@ -56,10 +54,8 @@ public class Veiculo {
 
 	@Override
 	public String toString() {
-		return "Veiculo [id=" + id + ", modelo=" + modelo + ", ano=" + ano +  "]";
+		return "Veiculo [ id = " + id + ", modelo = " + modelo + ", ano = " + ano + "]";
 	}
-
-
 	
 	
 	

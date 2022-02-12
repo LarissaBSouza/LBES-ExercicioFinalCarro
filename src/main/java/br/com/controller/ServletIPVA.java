@@ -67,7 +67,6 @@ public class ServletIPVA extends HttpServlet {
 			
 			String modelo = request.getParameter("modelo");
 			String ano = request.getParameter("ano");
-			
 			String id = request.getParameter("id");
 			
 			

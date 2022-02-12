@@ -3,10 +3,11 @@ package br.com.controller;
 import br.com.conexao.Conexao;
 import br.com.dao.Ipva;
 import br.com.dao.IpvaDAO;
+import br.com.dao.Veiculo;
 import br.com.dao.VeiculoDAO;
 
 public class Aplicacao_IPVA {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		
 		IpvaDAO ipvaD = new IpvaDAO();
 		VeiculoDAO veic = new VeiculoDAO();
@@ -14,14 +15,14 @@ public class Aplicacao_IPVA {
 		Conexao c = new Conexao();
 		c.getConnection();
 		
-		Ipva ipva = new Ipva("2022");
+//		Ipva ipva = new Ipva("2022");
+//		
+//		ipvaD.inserirIPVA(ipva);
+//		
+//		
+//		System.out.println(ipvaD.mostrarIPVA());
 		
-		ipvaD.inserirIPVA(ipva);
-		
-		
-		System.out.println(ipvaD.mostrarIPVA());
-		
-		
+		veic.compararAnosIPVA("1");
 
 	}
 }
